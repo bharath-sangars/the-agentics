@@ -1,0 +1,350 @@
+PS C:\Users\Sanga\Downloads\agentic-starter-kits\agentic-starter-kits\crewai-kit>  uv run python main.py "retrieval-augmented generation"
+╭───────────────────────────────────────────────────────────── ✨ Update Available ✨ ─────────────────────────────────────────────────────────────╮
+│                                                                                                                                                  │
+│  A new version of CrewAI is available!                                                                                                           │
+│                                                                                                                                                  │
+│  Current version: 1.15.27                                                                                                                        │
+│  Latest version:  1.15.28                                                                                                                        │
+│                                                                                                                                                  │
+│  To update, run: uv sync --upgrade-package crewai                                                                                                │
+│                                                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────────────────────────────────── 🚀 Crew Execution Started ────────────────────────────────────────────────────────────╮
+│                                                                                                                                                  │
+│  Crew Execution Started                                                                                                                          │
+│  Name: crew                                                                                                                                      │
+│  ID: ef3c3828-d9b7-4049-aff7-799862f31825                                                                                                        │
+│                                                                                                                                                  │
+│                                                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────────────────────── 📋 Task Started ─────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                  │
+│  Task Started                                                                                                                                    │
+│  Name: Research retrieval-augmented generation. List 5 key facts and 2 open questions.                                                           │
+│  ID: 24b3d06e-db15-4b5b-b36c-13c29813663b                                                                                                        │
+│                                                                                                                                                  │
+│                                                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────────────────────── 🤖 Agent Started ────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                  │
+│  Agent: Research Analyst                                                                                                                         │
+│                                                                                                                                                  │
+│  Task: Research retrieval-augmented generation. List 5 key facts and 2 open questions.                                                           │
+│                                                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────────────────── ✅ Agent Final Answer ──────────────────────────────────────────────────────────────╮
+│                                                                                                                                                  │
+│  Agent: Research Analyst                                                                                                                         │
+│                                                                                                                                                  │
+│  Final Answer:                                                                                                                                   │
+│  **Retrieval‑Augmented Generation (RAG): Key Facts & Open Questions**                                                                            │
+│                                                                                                                                                  │
+│  ---                                                                                                                                             │
+│                                                                                                                                                  │
+│  ### 5 Key Facts                                                                                                                                 │
+│                                                                                                                                                  │
+│  - **Hybrid Architecture** – RAG combines a **retriever** (often a dense vector search over a large external knowledge base) with a              │
+│  **generator** (typically a large language model). The retriever supplies relevant documents or passages, and the generator conditions its       │
+│  output on this retrieved context.                                                                                                               │
+│                                                                                                                                                  │
+│  - **Improved Factuality** – By grounding generation in up‑to‑date external sources, RAG consistently reduces hallucinations compared with pure  │
+│  LLM generation, especially on tasks requiring precise, time‑sensitive, or domain‑specific information (e.g., medical QA, legal citations).      │
+│                                                                                                                                                  │
+│  - **Two‑Stage Retrieval Strategies** – Modern RAG pipelines often use a **coarse‑to‑fine** approach: an initial fast, lexical or dense          │
+│  retriever (e.g., BM25, DPR) fetches a shortlist of candidates, followed by a re‑ranking step (cross‑encoder or reranker) that selects the most  │
+│  relevant snippets for the generator.                                                                                                            │
+│                                                                                                                                                  │
+│  - **End‑to‑End Training Possibilities** – While early RAG systems kept the retriever frozen, recent work (e.g., RAG‑Seq, REALM, FiD, Atlas)     │
+│  fine‑tunes the retriever jointly with the generator using differentiable retrieval or reinforcement‑learning signals, yielding better           │
+│  alignment between retrieved evidence and generated text.                                                                                        │
+│                                                                                                                                                  │
+│  - **Scalable Knowledge Sources** – RAG can draw from diverse corpora: static document collections (Wikipedia, patents), dynamic APIs (news      │
+│  feeds, product catalogs), or even multimodal stores (images, tables). The retrieval component can be swapped or updated without retraining the  │
+│  generator, enabling **continuous knowledge updates** at low cost.                                                                               │
+│                                                                                                                                                  │
+│  ---                                                                                                                                             │
+│                                                                                                                                                  │
+│  ### 2 Open Questions                                                                                                                            │
+│                                                                                                                                                  │
+│  - **How to Optimize Retrieval‑Generator Interaction for Long‑Form, Multi‑Step Reasoning?**                                                      │
+│    Current RAG models excel at short answers but struggle when the answer requires chaining multiple pieces of evidence across documents. What   │
+│  architectures, training objectives, or iterative retrieval‑generation loops are needed to reliably support deep, multi‑hop reasoning without    │
+│  exploding computational cost?                                                                                                                   │
+│                                                                                                                                                  │
+│  - **What Are Robust Evaluation Metrics for Retrieval‑Grounded Faithfulness?**                                                                   │
+│    Existing benchmarks (e.g., Natural Questions, KILT) measure answer correctness but often conflate retrieval quality with generation fluency.  │
+│  How can we design metrics that isolate *faithfulness to retrieved sources*, detect subtle hallucinations, and remain applicable across          │
+│  heterogeneous knowledge domains and modalities?                                                                                                 │
+│                                                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────────────────────────────────────── 📋 Task Completion ───────────────────────────────────────────────────────────────╮
+│                                                                                                                                                  │
+│  Task Completed                                                                                                                                  │
+│  Name: Research retrieval-augmented generation. List 5 key facts and 2 open questions.                                                           │
+│  Agent: Research Analyst                                                                                                                         │
+│                                                                                                                                                  │
+│                                                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────────────────────── 📋 Task Started ─────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                  │
+│  Task Started                                                                                                                                    │
+│  Name: Using the research brief, write a 250-word explainer on retrieval-augmented generation. Explain it to a 10-year-old using simple          │
+│  language and relatable everyday examples.                                                                                                       │
+│  ID: 4e35cef3-6c57-4f4c-a483-dfe534e1cb71                                                                                                        │
+│                                                                                                                                                  │
+│                                                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────────────────────── 🤖 Agent Started ────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                  │
+│  Agent: Technical Writer                                                                                                                         │
+│                                                                                                                                                  │
+│  Task: Using the research brief, write a 250-word explainer on retrieval-augmented generation. Explain it to a 10-year-old using simple          │
+│  language and relatable everyday examples.                                                                                                       │
+│                                                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────────────────── ✅ Agent Final Answer ──────────────────────────────────────────────────────────────╮
+│                                                                                                                                                  │
+│  Agent: Technical Writer                                                                                                                         │
+│                                                                                                                                                  │
+│  Final Answer:                                                                                                                                   │
+│  Imagine a robot that can answer any question you ask. The robot is very smart, but sometimes it forgets facts or makes up answers. To help it,  │
+│  we give the robot a huge library of books, articles, and even pictures. When you ask a question, the robot first runs to the library, finds     │
+│  the most useful pages, and then writes its answer using those pages. This two‑step trick is called Retrieval‑Augmented Generation, or RAG.      │
+│                                                                                                                                                  │
+│  The first step is called the retriever. Think of it as a fast librarian who scans many shelves and picks a few pages that match your question.  │
+│  The librarian can look for exact words, like “dinosaur,” or understand the meaning behind the words.                                            │
+│                                                                                                                                                  │
+│  The second step is the generator. This part is the robot writer. It reads the pages the librarian gave and then creates a reply that mixes its  │
+│  own knowledge with the new facts. Because it uses fresh information, the answer is more correct and less likely to be a made‑up story.          │
+│                                                                                                                                                  │
+│  Why is this                                                                                                                                     │
+│                                                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────────────────────────────────────── 📋 Task Completion ───────────────────────────────────────────────────────────────╮
+│                                                                                                                                                  │
+│  Task Completed                                                                                                                                  │
+│  Name: Using the research brief, write a 250-word explainer on retrieval-augmented generation. Explain it to a 10-year-old using simple          │
+│  language and relatable everyday examples.                                                                                                       │
+│  Agent: Technical Writer                                                                                                                         │
+│                                                                                                                                                  │
+│                                                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────────────────────── 📋 Task Started ─────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                  │
+│  Task Started                                                                                                                                    │
+│  Name: Edit the explainer. Keep the language simple and child-friendly. Tighten the writing and mark any claim needing a source.                 │
+│  ID: 0a0e463e-87dd-4656-8035-da96f6858add                                                                                                        │
+│                                                                                                                                                  │
+│                                                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────────────────────── 🤖 Agent Started ────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                  │
+│  Agent: Editor                                                                                                                                   │
+│                                                                                                                                                  │
+│  Task: Edit the explainer. Keep the language simple and child-friendly. Tighten the writing and mark any claim needing a source.                 │
+│                                                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────────────────── ✅ Agent Final Answer ──────────────────────────────────────────────────────────────╮
+│                                                                                                                                                  │
+│  Agent: Editor                                                                                                                                   │
+│                                                                                                                                                  │
+│  Final Answer:                                                                                                                                   │
+│  **Retrieval‑Augmented Generation (RAG): What It Is and What We Still Wonder**                                                                   │
+│                                                                                                                                                  │
+│  ---                                                                                                                                             │
+│                                                                                                                                                  │
+│  ### 5 Simple Facts                                                                                                                              │
+│                                                                                                                                                  │
+│  1. **Hybrid design** – RAG uses two parts: a **retriever** that quickly looks through a big library of text (or images) and a **generator**     │
+│  that writes an answer using the pieces the retriever found.                                                                                     │
+│                                                                                                                                                  │
+│  2. **More accurate answers** – Because the generator can see fresh, real information, RAG usually makes fewer “made‑up” facts than a language   │
+│  model that works alone, especially for time‑sensitive or specialist topics like medicine or law. [source needed]                                │
+│                                                                                                                                                  │
+│  3. **Two‑step search** – Many RAG systems first pick a rough list of possible pages (using a fast method like BM25 or a dense vector search)    │
+│  and then re‑rank that list with a smarter model to choose the best snippets for the generator. [source needed]                                  │
+│                                                                                                                                                  │
+│  4. **Joint training** – Early RAG models kept the retriever fixed, but newer work (e.g., RAG‑Seq, REALM, FiD, Atlas) trains the retriever       │
+│  together with the generator, so the two parts work more closely and produce better‑aligned answers. [source needed]                             │
+│                                                                                                                                                  │
+│  5. **Easy knowledge updates** – The retriever can be swapped out or refreshed with new documents (news feeds, product catalogs, pictures,       │
+│  tables) without retraining the generator, letting the system stay up‑to‑date at low cost. [source needed]                                       │
+│                                                                                                                                                  │
+│  ---                                                                                                                                             │
+│                                                                                                                                                  │
+│  ### 2 Open Questions                                                                                                                            │
+│                                                                                                                                                  │
+│  1. **How can RAG handle long, multi‑step reasoning?**                                                                                           │
+│     Today’s RAG models are good at short answers, but they still find it hard to chain together many pieces of evidence from different sources   │
+│  to answer complex questions. What new architectures or training tricks can let them reason step‑by‑step without using too much computer power?  │
+│  [source needed]                                                                                                                                 │
+│                                                                                                                                                  │
+│  2. **How should we measure “faithfulness” to the retrieved sources?**                                                                           │
+│     Current tests (like Natural Questions or KILT) mix up how well the system finds the right documents with how fluently it writes the answer.  │
+│  We need metrics that specifically check whether the answer sticks to the retrieved facts and catches subtle hallucinations, and that work for   │
+│  many kinds of data (text, tables, images). [source needed]                                                                                      │
+│                                                                                                                                                  │
+│  ---                                                                                                                                             │
+│                                                                                                                                                  │
+│  ### A Kid‑Friendly Story                                                                                                                        │
+│                                                                                                                                                  │
+│  Imagine a robot that can answer any question you ask. The robot is super smart, but sometimes it forgets facts or makes up answers. To help     │
+│  it, we give the robot a huge library of books, articles, and even pictures.                                                                     │
+│                                                                                                                                                  │
+│  When you ask a question, the robot does two things:                                                                                             │
+│                                                                                                                                                  │
+│  1. **The librarian (retriever)** runs to the shelves, scans many books, and picks a few pages that look most like they might have the answer.   │
+│  It can look for exact words (“dinosaur”) or understand the meaning behind the words.                                                            │
+│                                                                                                                                                  │
+│  2. **The writer (generator)** reads those pages and then writes a reply that mixes what it already knows with the new facts it just found.      │
+│  Because it uses fresh information, the answer is more likely to be correct and less likely to be a made‑up story.                               │
+│                                                                                                                                                  │
+│  That two‑step trick—first find the right facts, then write the answer—is called **Retrieval‑Augmented Generation**, or **RAG**.                 │
+│                                                                                                                                                  │
+│  ---                                                                                                                                             │
+│                                                                                                                                                  │
+│  *All claims marked with **[source needed]** should be backed by a citation or study.*                                                           │
+│                                                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────────────────────────────────────── 📋 Task Completion ───────────────────────────────────────────────────────────────╮
+│                                                                                                                                                  │
+│  Task Completed                                                                                                                                  │
+│  Name: Edit the explainer. Keep the language simple and child-friendly. Tighten the writing and mark any claim needing a source.                 │
+│  Agent: Editor                                                                                                                                   │
+│                                                                                                                                                  │
+│                                                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────────────────────── Crew Completion ─────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                  │
+│  Crew Execution Completed                                                                                                                        │
+│  Name: crew                                                                                                                                      │
+│  ID: ef3c3828-d9b7-4049-aff7-799862f31825                                                                                                        │
+│  Final Output: **Retrieval‑Augmented Generation (RAG): What It Is and What We Still Wonder**                                                     │
+│                                                                                                                                                  │
+│  ---                                                                                                                                             │
+│                                                                                                                                                  │
+│  ### 5 Simple Facts                                                                                                                              │
+│                                                                                                                                                  │
+│  1. **Hybrid design** – RAG uses two parts: a **retriever** that quickly looks through a big library of text (or images) and a **generator**     │
+│  that writes an answer using the pieces the retriever found.                                                                                     │
+│                                                                                                                                                  │
+│  2. **More accurate answers** – Because the generator can see fresh, real information, RAG usually makes fewer “made‑up” facts than a language   │
+│  model that works alone, especially for time‑sensitive or specialist topics like medicine or law. [source needed]                                │
+│                                                                                                                                                  │
+│  3. **Two‑step search** – Many RAG systems first pick a rough list of possible pages (using a fast method like BM25 or a dense vector search)    │
+│  and then re‑rank that list with a smarter model to choose the best snippets for the generator. [source needed]                                  │
+│                                                                                                                                                  │
+│  4. **Joint training** – Early RAG models kept the retriever fixed, but newer work (e.g., RAG‑Seq, REALM, FiD, Atlas) trains the retriever       │
+│  together with the generator, so the two parts work more closely and produce better‑aligned answers. [source needed]                             │
+│                                                                                                                                                  │
+│  5. **Easy knowledge updates** – The retriever can be swapped out or refreshed with new documents (news feeds, product catalogs, pictures,       │
+│  tables) without retraining the generator, letting the system stay up‑to‑date at low cost. [source needed]                                       │
+│                                                                                                                                                  │
+│  ---                                                                                                                                             │
+│                                                                                                                                                  │
+│  ### 2 Open Questions                                                                                                                            │
+│                                                                                                                                                  │
+│  1. **How can RAG handle long, multi‑step reasoning?**                                                                                           │
+│     Today’s RAG models are good at short answers, but they still find it hard to chain together many pieces of evidence from different sources   │
+│  to answer complex questions. What new architectures or training tricks can let them reason step‑by‑step without using too much computer power?  │
+│  [source needed]                                                                                                                                 │
+│                                                                                                                                                  │
+│  2. **How should we measure “faithfulness” to the retrieved sources?**                                                                           │
+│     Current tests (like Natural Questions or KILT) mix up how well the system finds the right documents with how fluently it writes the answer.  │
+│  We need metrics that specifically check whether the answer sticks to the retrieved facts and catches subtle hallucinations, and that work for   │
+│  many kinds of data (text, tables, images). [source needed]                                                                                      │
+│                                                                                                                                                  │
+│  ---                                                                                                                                             │
+│                                                                                                                                                  │
+│  ### A Kid‑Friendly Story                                                                                                                        │
+│                                                                                                                                                  │
+│  Imagine a robot that can answer any question you ask. The robot is super smart, but sometimes it forgets facts or makes up answers. To help     │
+│  it, we give the robot a huge library of books, articles, and even pictures.                                                                     │
+│                                                                                                                                                  │
+│  When you ask a question, the robot does two things:                                                                                             │
+│                                                                                                                                                  │
+│  1. **The librarian (retriever)** runs to the shelves, scans many books, and picks a few pages that look most like they might have the answer.   │
+│  It can look for exact words (“dinosaur”) or understand the meaning behind the words.                                                            │
+│                                                                                                                                                  │
+│  2. **The writer (generator)** reads those pages and then writes a reply that mixes what it already knows with the new facts it just found.      │
+│  Because it uses fresh information, the answer is more likely to be correct and less likely to be a made‑up story.                               │
+│                                                                                                                                                  │
+│  That two‑step trick—first find the right facts, then write the answer—is called **Retrieval‑Augmented Generation**, or **RAG**.                 │
+│                                                                                                                                                  │
+│  ---                                                                                                                                             │
+│                                                                                                                                                  │
+│  *All claims marked with **[source needed]** should be backed by a citation or study.*                                                           │
+│                                                                                                                                                  │
+│                                                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+=== FINAL OUTPUT (also saved to output/explainer.md) ===
+
+**Retrieval‑Augmented Generation (RAG): What It Is and What We Still Wonder**
+
+---
+
+### 5 Simple Facts  
+
+1. **Hybrid design** – RAG uses two parts: a **retriever** that quickly looks through a big library of text (or images) and a **generator** that writes an answer using the pieces the retriever found.  
+
+2. **More accurate answers** – Because the generator can see fresh, real information, RAG usually makes fewer “made‑up” facts than a language model that works alone, especially for time‑sensitive or specialist topics like medicine or law. [source needed]  
+
+3. **Two‑step search** – Many RAG systems first pick a rough list of possible pages (using a fast method like BM25 or a dense vector search) and then re‑rank that list with a smarter model to choose the best snippets for the generator. [source needed]  
+
+4. **Joint training** – Early RAG models kept the retriever fixed, but newer work (e.g., RAG‑Seq, REALM, FiD, Atlas) trains the retriever together with the generator, so the two parts work more closely and produce better‑aligned answers. [source needed]  
+
+5. **Easy knowledge updates** – The retriever can be swapped out or refreshed with new documents (news feeds, product catalogs, pictures, tables) without retraining the generator, letting the system stay up‑to‑date at low cost. [source needed]  
+
+---
+
+### 2 Open Questions  
+
+1. **How can RAG handle long, multi‑step reasoning?**  
+   Today’s RAG models are good at short answers, but they still find it hard to chain together many pieces of evidence from different sources to answer complex questions. What new architectures or training tricks can let them reason step‑by‑step without using too much computer power? [source needed]  
+
+2. **How should we measure “faithfulness” to the retrieved sources?**  
+   Current tests (like Natural Questions or KILT) mix up how well the system finds the right documents with how fluently it writes the answer. We need metrics that specifically check whether the answer sticks to the retrieved facts and catches subtle hallucinations, and that work for many kinds of data (text, tables, images). [source needed]  
+
+---
+
+### A Kid‑Friendly Story  
+
+Imagine a robot that can answer any question you ask. The robot is super smart, but sometimes it forgets facts or makes up answers. To help it, we give the robot a huge library of books, articles, and even pictures.
+
+When you ask a question, the robot does two things:
+
+1. **The librarian (retriever)** runs to the shelves, scans many books, and picks a few pages that look most like they might have the answer. It can look for exact words (“dinosaur”) or understand the meaning behind the words.
+
+2. **The writer (generator)** reads those pages and then writes a reply that mixes what it already knows with the new facts it just found. Because it uses fresh information, the answer is more likely to be correct and less likely to be a made‑up story.
+
+That two‑step trick—first find the right facts, then write the answer—is called **Retrieval‑Augmented Generation**, or **RAG**.  
+
+---  
+
+*All claims marked with **[source needed]** should be backed by a citation or study.*
+╭───────────────────────────────────────────────────────────────── Tracing Status ─────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                  │
+│  Info: Tracing is disabled.                                                                                                                      │
+│                                                                                                                                                  │
+│  To enable tracing, do any one of these:                                                                                                         │
+│  • Set tracing=True in your Crew/Flow code                                                                                                       │
+│  • Set CREWAI_TRACING_ENABLED=true in your project's .env file                                                                                   │
+│  • Run: crewai traces enable                                                                                                                     │
+│                                                                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
